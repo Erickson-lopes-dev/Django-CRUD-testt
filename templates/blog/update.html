@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}Update{% endblock %}
+
+{% block content %}
+
+{% if update_status %}
+    {{ update_status }}
+{% endif %}
+
+
+<a href="{% url 'list' %}">Listagem</a>
+<form method="post" action="{% url 'update' post.id %}">
+    {% include 'blog/form.html' %}
+</form>
+{% endblock %}

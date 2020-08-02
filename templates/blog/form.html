@@ -1,0 +1,5 @@
+{% csrf_token %}
+<input type="text" id="title" name="title" placeholder="título" required value="{{ post.title }}">
+<input type="text" name="sub_title" placeholder=" Subtitulo" required value="{{ post.sub_title }}">
+<textarea name="content" placeholder="seu texto" required >{{ post.content }}</textarea>
+<button type="submit">Salvar</button>

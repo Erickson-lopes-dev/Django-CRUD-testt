@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %} Listagem {% endblock %}
+
+{% block content %}
+
+<a href="{% url 'create' %}" >Novo post</a>
+
+{% if save %}
+    {{ save }}
+{% endif %}
+
+<ul>
+    {% for post in posts %}
+    <li>by: {{ post.user }}</li>
+    <li>{{ post.title }}</li>
+    <li>{{ post.sub_title }}</li>
+    <li>{{ post.content }}</li>
+    <li><a href="{% url 'update' post.id %}">Update</a>  <a href="{% url 'delete' post.id %}">Delete</a></li>
+    <br/>
+    {% endfor %}
+</ul>
+{% endblock %}

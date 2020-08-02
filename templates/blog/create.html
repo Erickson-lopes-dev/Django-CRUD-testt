@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}Criação{% endblock %}
+
+{% block content %}
+
+{% if save %}
+    {{ save }}
+{% endif %}
+
+<a href="{% url 'list' %}">Lista</a>
+
+<form method="post" action="{% url 'create' %}">
+    {% include 'blog/form.html' %}
+</form>
+
+{% endblock %}
